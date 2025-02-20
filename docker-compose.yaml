@@ -1,0 +1,14 @@
+version: "3"
+services:
+  thetadata:
+    image: thetadata:latest
+    restart: always
+    ports:
+      - "25510:25511"
+      - "10000:10001"
+      - "11000:11001"
+    environment:
+      - THETADATA_USERNAME=${THETADATA_USERNAME}
+      - THETADATA_PASSWORD=${THETADATA_PASSWORD}
+    build:
+      dockerfile: ./thetadata.Dockerfile
