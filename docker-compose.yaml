@@ -1,14 +1,18 @@
-version: "3"
 services:
-  thetadata:
-    image: thetadata:latest
+  thetaterm:
+    image: thetaterm:latest
     restart: always
     ports:
-      - "25510:25511"
-      - "10000:10001"
-      - "11000:11001"
+      - "127.0.0.1:25510:25510"
+      - "127.0.0.1:10000:10000"
+      - "127.0.0.1:11000:11000"
     environment:
-      - THETADATA_USERNAME=${THETADATA_USERNAME}
-      - THETADATA_PASSWORD=${THETADATA_PASSWORD}
+        THETADATA_CREDS_FILE: /run/secrets/thetadata_creds
+    secrets:
+      - thetadata_creds
     build:
-      dockerfile: ./thetadata.Dockerfile
+      dockerfile: ./thetaterm.Dockerfile
+
+secrets:
+  thetadata_creds:
+    file: thetadata-creds.txt

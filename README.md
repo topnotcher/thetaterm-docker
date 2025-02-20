@@ -1,15 +1,10 @@
-# How to run
+ThetaData ThetaTerm Docker Image
+================================
 
-1. Copy files to one dir
-2. Edit .env
-3. `docker compose --env-file .env up --build thetadata`
+This is a docker file and 
 
-## Usage
-Python:
-```python
-client = ThetaClient(launch=False)
-```
+Adapted and upated from: https://gist.github.com/dvush/c6851902ffe585c5fbebf5503bc3908b
 
-REST api:
-
-`127.0.0.1:25510`
+1. Create thetadata-creds.txt with your ThetaData username on the first line
+   and password on the second line.
+2. `docker compose up --build thetadata`
