@@ -1,6 +1,6 @@
 services:
   thetaterm:
-    image: thetaterm:latest
+    image: ghcr.io/topnotcher/thetaterm-docker/thetaterm:latest
     restart: always
     ports:
       - "127.0.0.1:25503:25503"
