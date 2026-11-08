@@ -5,12 +5,12 @@ services:
     ports:
       - "127.0.0.1:25503:25503"
     environment:
-        THETADATA_CREDS_FILE: /run/secrets/thetadata_creds
+        THETADATA_API_KEY_FILE: /run/secrets/thetadata_api_key
     secrets:
-      - thetadata_creds
+      - thetadata_api_key
     build:
       dockerfile: ./Dockerfile
 
 secrets:
-  thetadata_creds:
-    file: thetadata-creds.txt
+  thetadata_api_key:
+    file: thetadata-api-key.txt
